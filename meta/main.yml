@@ -1,0 +1,15 @@
+galaxy_info:
+  author: Evan Nook
+  description: Install nginx package
+  company: InnoNook
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+  - name: Debian
+    versions:
+    - jessie
+  galaxy_tags:
+    - nginx
+    - debian
+    - web
+dependencies: []
