@@ -3,6 +3,11 @@ nginx
 
 Install nginx package
 
+Dependencies
+------------
+
+- evannook.sysbase
+
 Example Playbook
 ----------------
 
