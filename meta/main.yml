@@ -12,4 +12,5 @@ galaxy_info:
     - nginx
     - debian
     - web
-dependencies: []
+dependencies:
+  - evannook.sysbase
