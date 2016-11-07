@@ -1,3 +1,6 @@
 ---
-- name: install nginx
-  apt: "name=nginx default_release=jessie-backports state=latest"
+- block:
+  - name: install nginx
+    apt: "name=nginx default_release=jessie-backports state=latest"
+  tags:
+    - nginx
