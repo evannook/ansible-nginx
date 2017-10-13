@@ -6,7 +6,7 @@ Install nginx package
 Dependencies
 ------------
 
-- evannook.sysbase
+- pylabs.sysbase
 
 Example Playbook
 ----------------
@@ -14,7 +14,7 @@ Example Playbook
 ```yaml
 - hosts: servers
   roles:
-    - role: evannook.nginx
+    - role: pylabs.nginx
 ```
 
 License
@@ -25,4 +25,4 @@ MIT
 Author Information
 ------------------
 
-Evan Nook
+William Wu
