@@ -1,16 +1,16 @@
 galaxy_info:
-  author: Evan Nook
+  author: William Wu
   description: Install nginx package
-  company: InnoNook
+  company: PyLabs
   license: MIT
   min_ansible_version: 2.0
   platforms:
   - name: Debian
     versions:
-    - jessie
+    - stretch
   galaxy_tags:
     - nginx
     - debian
     - web
 dependencies:
-  - evannook.sysbase
+  - pylabs.sysbase
