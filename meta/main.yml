@@ -1,14 +1,15 @@
 galaxy_info:
   role_name: nginx
   author: William Wu
-  description: Install nginx package
+  description: Install Nginx package
   company: PyLabs
   license: MIT
   min_ansible_version: 2.0
   platforms:
   - name: Debian
     versions:
-    - stretch
+    - Buster
+    - 10
   galaxy_tags:
     - nginx
     - debian

@@ -1,7 +1,7 @@
 nginx
 =====
 
-Install nginx package
+Install Nginx package
 
 Dependencies
 ------------
