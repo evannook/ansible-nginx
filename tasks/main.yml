@@ -2,5 +2,11 @@
 - block:
   - name: install nginx
     apt: "name=nginx state=latest"
+  - name: setup nginx cache dir
+    file:
+      path: "/var/cache/nginx"
+      state: "directory"
+      owner: "www-data"
+      group: "www-data"
   tags:
     - nginx
