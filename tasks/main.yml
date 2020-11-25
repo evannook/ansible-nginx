@@ -4,9 +4,17 @@
     apt: "name=nginx state=latest"
   - name: setup nginx cache dir
     file:
-      path: "/var/cache/nginx"
+      path: "{{ nginx_cache_path }}"
       state: "directory"
       owner: "www-data"
       group: "www-data"
+  - name: deploy nginx cache config
+    template:
+      src: "nginx_cache.conf.j2"
+      dest: "/etc/nginx/conf.d/cache.conf"
+      owner: "root"
+      group: "root"
+      mode: "0644"
+    notify: restart nginx service
   tags:
     - nginx
