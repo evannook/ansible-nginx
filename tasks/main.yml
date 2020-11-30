@@ -8,13 +8,23 @@
       state: "directory"
       owner: "www-data"
       group: "www-data"
-  - name: deploy nginx cache config
+  - name: deploy nginx proxy cache config
     template:
-      src: "nginx_cache.conf.j2"
-      dest: "/etc/nginx/conf.d/cache.conf"
+      src: "nginx_proxy_cache.conf.j2"
+      dest: "/etc/nginx/conf.d/proxy_cache.conf"
       owner: "root"
       group: "root"
       mode: "0644"
     notify: restart nginx service
+    when: nginx_proxy_cache_enabled
+  - name: deploy nginx uwsgi cache config
+    template:
+      src: "nginx_uwsgi_cache.conf.j2"
+      dest: "/etc/nginx/conf.d/uwsgi_cache.conf"
+      owner: "root"
+      group: "root"
+      mode: "0644"
+    notify: restart nginx service
+    when: nginx_uwsgi_cache_enabled
   tags:
     - nginx
