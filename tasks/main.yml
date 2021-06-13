@@ -1,15 +1,15 @@
 ---
 - block:
   - name: install nginx
-    apt: "name=nginx state=latest"
+    ansible.builtin.apt: "name=nginx state=latest"
   - name: setup nginx cache dir
-    file:
+    ansible.builtin.file:
       path: "{{ nginx_cache_path }}"
       state: "directory"
       owner: "www-data"
       group: "www-data"
   - name: deploy nginx proxy cache config
-    template:
+    ansible.builtin.template:
       src: "nginx_proxy_cache.conf.j2"
       dest: "/etc/nginx/conf.d/proxy_cache.conf"
       owner: "root"
@@ -18,7 +18,7 @@
     notify: restart nginx service
     when: nginx_proxy_cache_enabled
   - name: deploy nginx uwsgi cache config
-    template:
+    ansible.builtin.template:
       src: "nginx_uwsgi_cache.conf.j2"
       dest: "/etc/nginx/conf.d/uwsgi_cache.conf"
       owner: "root"
